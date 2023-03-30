@@ -1,5 +1,5 @@
 import React from 'react';
-import { TILE_SIZE_B } from '../settings/constants';
+import { DEMON_HELMET_OFFSET, TILE_SIZE_B } from '../settings/constants';
 import './index.css';
 
 const MiniDemon = () => {
@@ -10,9 +10,10 @@ const MiniDemon = () => {
           bottom: TILE_SIZE_B * 2,
           left:TILE_SIZE_B * 5,
           width: TILE_SIZE_B,
-          height: 96,
+          height: TILE_SIZE_B + DEMON_HELMET_OFFSET,
           backgroundImage:"url(./assets/MINI-DEMON.png)" ,
           backgroundRepeat: 'no-repeat',
+          backgroundPosition: `0px -${TILE_SIZE_B - DEMON_HELMET_OFFSET}px`,
           animation: "mini-demon-animation 1s steps(4) infinite"
         }}
         />
