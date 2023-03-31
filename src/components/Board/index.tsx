@@ -4,6 +4,7 @@ import Demon from '../Demon';
 import Hero from '../Hero';
 import MiniDemon from '../MiniDemon';
 import { GAME_SIZE } from '../settings/constants';
+import Trap from '../Trap';
 
 const Board  = () => {
     return (
@@ -13,6 +14,7 @@ const Board  = () => {
             <MiniDemon/>
             <Hero/>
             <Chest/>
+            <Trap />
         <img src="./assets/tileset.gif" alt="" width={GAME_SIZE} height={GAME_SIZE}/>
         </div>
     );
