@@ -1,5 +1,5 @@
 import React from 'react';
-import { DEMON_TILE_SIZE, EDirection, TILE_SIZE_B } from '../settings/constants';
+import { DEMON_TILE_SIZE, EDirection, TILE_SIZE } from '../settings/constants';
 import './index.css';
 import useEnemyMoviment from '../../hooks/useEnemyMoviment';
 
@@ -16,8 +16,8 @@ const Demon = (props : IProps) => {
         <div
         style={{
           position:'absolute',
-          bottom: TILE_SIZE_B * moviment.position.y,
-          left:TILE_SIZE_B * moviment.position.x,
+          top: TILE_SIZE* moviment.position.y,
+          left:TILE_SIZE * moviment.position.x,
           width: DEMON_TILE_SIZE,
           height: DEMON_TILE_SIZE,
           backgroundImage:"url(./assets/DEMON.png)" ,

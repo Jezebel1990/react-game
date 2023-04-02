@@ -3,28 +3,27 @@ import { EDirection, HERO_HELMET_OFFSET, TILE_SIZE } from '../settings/constants
 import './index.css';
 import useHeroMoviment from '../../hooks/useHeroMoviment';
 
-const initialPosition ={
-  x: 8,
-  y: 3
+interface IProps {
+  initialPosition: {x: number; y: number}
 }
 
-const Hero = () => {
-  const moviment = useHeroMoviment(initialPosition);
+const Hero = (props: IProps) => {
+  const { position, direction} = useHeroMoviment(props.initialPosition);
 
 
 return (
     <div
     style={{
       position:'absolute',
-      bottom: TILE_SIZE * 0,
-      left:TILE_SIZE * 0,
+      top: TILE_SIZE * position.y,
+      left:TILE_SIZE * position.x,
       width: TILE_SIZE,
       height: TILE_SIZE + HERO_HELMET_OFFSET,
       backgroundImage:"url(./assets/HERO.png)" ,
       backgroundRepeat: 'no-repeat',
       backgroundPosition: `0px -${TILE_SIZE - HERO_HELMET_OFFSET}px`,
-      animation: "hero-animation 1s steps(6) infinite",
-      transform: `scaleX(${moviment.direction === EDirection.LEFT ? -1 : 1})`
+      animation: "hero-animation 1s steps(4) infinite",
+
     }}
     />
     ) ;

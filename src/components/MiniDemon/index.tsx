@@ -1,5 +1,5 @@
 import React from 'react';
-import { DEMON_HELMET_OFFSET, EDirection, TILE_SIZE_B } from '../settings/constants';
+import { DEMON_HELMET_OFFSET, EDirection, TILE_SIZE } from '../settings/constants';
 import './index.css';
 import useEnemyMoviment from '../../hooks/useEnemyMoviment';
 
@@ -19,13 +19,13 @@ const MiniDemon = (props : IProps) => {
         <div
         style={{
           position:'absolute',
-          bottom: TILE_SIZE_B * moviment.position.y,
-          left:TILE_SIZE_B * moviment.position.x,
-          width: TILE_SIZE_B,
-          height: TILE_SIZE_B + DEMON_HELMET_OFFSET,
+          top: TILE_SIZE * moviment.position.y,
+          left:TILE_SIZE * moviment.position.x,
+          width: TILE_SIZE,
+          height: TILE_SIZE + DEMON_HELMET_OFFSET,
           backgroundImage:"url(./assets/MINI-DEMON.png)" ,
           backgroundRepeat: 'no-repeat',
-          backgroundPosition: `0px -${TILE_SIZE_B - DEMON_HELMET_OFFSET}px`,
+          backgroundPosition: `0px -${TILE_SIZE - DEMON_HELMET_OFFSET}px`,
           animation: "mini-demon-animation 1s steps(4) infinite",
           transform: `scaleX(${moviment.direction === EDirection.LEFT ? -1 : 1})`
         }}

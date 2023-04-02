@@ -6,22 +6,27 @@ import { handleNextPosition } from '../../contexts/canvas/helpers';
 function useHeroMoviment(initialPosition) {
     const [positionState, updatePositioState] = React.useState(initialPosition);
     const [direction, updateDirectionState] = React.useState(EDirection.RIGHT);
+    
 
     useEventListener('keydown', (event: any) => {
-    const direction = event.key ;
+            const direction = event.key;
 
-    if (direction.indexOf("Arrow") === -1) {
-     return;
-    }
+            if (direction.indexOf("Arrow") === -1) {
+                return;
+            }
 
-    const nextPosition = handleNextPosition(direction, positionState);
-    updatePositioState(nextPosition);
-    updateDirectionState(direction);
- });
+            const nextPosition = handleNextPosition(direction, positionState);
+            updatePositioState(nextPosition);
+            updateDirectionState(direction);
+        });
+
  return {
     position: positionState,
     direction: direction,
  }
 
 }
+function handleKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
+    console.log('Key pressed:', event.key);
+  }
 export default useHeroMoviment;
