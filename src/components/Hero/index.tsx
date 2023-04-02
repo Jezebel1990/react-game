@@ -1,5 +1,5 @@
 import React from 'react';
-import { EDirection, HERO_HELMET_OFFSET, TILE_SIZE } from '../settings/constants';
+import { EDirection, HEAD_OFFSET,  TILE_SIZE } from '../settings/constants';
 import './index.css';
 import useHeroMoviment from '../../hooks/useHeroMoviment';
 
@@ -18,10 +18,10 @@ return (
       top: TILE_SIZE * position.y,
       left:TILE_SIZE * position.x,
       width: TILE_SIZE,
-      height: TILE_SIZE + HERO_HELMET_OFFSET,
+      height: TILE_SIZE + HEAD_OFFSET,
       backgroundImage:"url(./assets/HERO.png)" ,
       backgroundRepeat: 'no-repeat',
-      backgroundPosition: `0px -${TILE_SIZE - HERO_HELMET_OFFSET}px`,
+      backgroundPosition: `0px -${TILE_SIZE - HEAD_OFFSET}px`,
       animation: "hero-animation 1s steps(4) infinite",
 
     }}

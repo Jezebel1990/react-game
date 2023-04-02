@@ -1,7 +1,7 @@
 import useEventListener from '@use-it/event-listener';
 import React from 'react';
-import { EDirection } from '../../components/settings/constants';
-import { handleNextPosition } from '../../contexts/canvas/helpers';
+import { EDirection, EWalker } from '../../components/settings/constants';
+import {  checkValidMoviment, handleNextPosition } from '../../contexts/canvas/helpers';
 
 function useHeroMoviment(initialPosition) {
     const [positionState, updatePositioState] = React.useState(initialPosition);
@@ -9,15 +9,23 @@ function useHeroMoviment(initialPosition) {
     
 
     useEventListener('keydown', (event: any) => {
-            const direction = event.key;
+            const direction = event.key as EDirection;
 
             if (direction.indexOf("Arrow") === -1) {
                 return;
             }
 
             const nextPosition = handleNextPosition(direction, positionState);
+            const nextMove = checkValidMoviment( nextPosition, EWalker.HERO);
+
+            if (nextMove.valid) {
             updatePositioState(nextPosition);
             updateDirectionState(direction);
+
+            }
+            if (nextMove.dead) {
+            console.log('Você morreu');
+            }
         });
 
  return {
@@ -26,7 +34,5 @@ function useHeroMoviment(initialPosition) {
  }
 
 }
-function handleKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
-    console.log('Key pressed:', event.key);
-  }
+
 export default useHeroMoviment;

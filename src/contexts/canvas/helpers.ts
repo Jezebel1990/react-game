@@ -1,4 +1,5 @@
-import { EDirection } from "../../components/settings/constants";
+import React from "react";
+import { EDirection, EWalker } from "../../components/settings/constants";
 
 export function handleNextPosition(direction, position) {
     switch(direction) {
@@ -61,3 +62,30 @@ export const canvas = [
     [WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL, WL],
 ];
 
+export function checkValidMoviment( nextPosition, walker) { 
+const canvasValue = canvas[nextPosition.y][nextPosition.x];
+
+const result = walker === EWalker.HERO ? getHeroValidMoves(canvasValue) : getEnemyValidMoves(canvasValue);
+return result;
+}
+
+
+function getHeroValidMoves(canvasValue) {
+return {
+valid: canvasValue === ECanvas.FLOOR || canvasValue === ECanvas.CHEST || canvasValue === ECanvas.TRAP || canvasValue === ECanvas.MINI_DEMON,
+dead: canvasValue === ECanvas.TRAP || canvasValue === ECanvas.MINI_DEMON || canvasValue === ECanvas.DEMON,
+chest: canvasValue === ECanvas.CHEST,
+door: canvasValue === ECanvas.DOOR,
+}
+}
+    
+
+function getEnemyValidMoves(canvasValue) {
+    return {
+        valid: canvasValue === ECanvas.FLOOR || canvasValue === ECanvas.HERO,
+        dead: false,
+        chest: false,
+        door: false, 
+    }
+
+}
