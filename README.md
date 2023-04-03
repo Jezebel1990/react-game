@@ -10,7 +10,7 @@ Through the arrow keys of the keyboard, rescue the chests, and reach the exit do
 
 
 ## Access to the project
-You can access the source code of the [initial project] (https://react-game-black.vercel.app/) or [download](https://github.com/Jezebel1990/react-game.git) it.
+You can access the source code of the [initial project](https://react-game-black.vercel.app/) or  [download](https://github.com/Jezebel1990/react-game.git) it.
 
 
 ## Available Scripts
@@ -20,3 +20,10 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Technologies
+
+- React;
+- Typescript;
+- HTML;
+- CSS
