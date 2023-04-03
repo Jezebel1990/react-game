@@ -24,7 +24,7 @@ useInterval(function move() {
     }
 
 if (moviment.nextMove.dead) {
-    alert('Você morreu!');
+    alert('👻Buh! Você morreu.');
     window.location.reload();
 }
 

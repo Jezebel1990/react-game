@@ -27,7 +27,7 @@ function useHeroMoviment(initialPosition) {
 
             }
             if (moviment.nextMove.dead) {
-            alert('Você morreu');
+            alert('👻Buh! Você morreu.');
             window.location.reload();
             }
 
@@ -35,7 +35,7 @@ function useHeroMoviment(initialPosition) {
                 chestsContext.updateOpenedChests(moviment.nextPosition);
             }
             if (chestsContext.totalChests === chestsContext.openedChests.total && moviment.nextMove.door){
-                alert('Você venceu!');
+                alert('Você venceu!🏆');
                 window.location.reload();
             }
         });

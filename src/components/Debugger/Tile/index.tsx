@@ -12,13 +12,13 @@ function Tile (props: IProps) {
 function getTileColor() {
     switch (props.text) {
     case ECanvas.FLOOR:
-        return "blue";
+        return "green";
 
     case ECanvas.WALL:
-        return "yellow";   
+        return "cyan";   
         
      case ECanvas.DOOR:
-        return "white"; 
+        return "brown"; 
 
         case ECanvas.TRAP:
             return "chartreuse";   
@@ -28,7 +28,7 @@ function getTileColor() {
                 return "red";   
    
     case ECanvas.CHEST:
-        return "cyan";
+        return "yellow";
 
 
     case ECanvas.HERO:
