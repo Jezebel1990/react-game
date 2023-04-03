@@ -21,10 +21,10 @@ return (
       height: TILE_SIZE + HEAD_OFFSET,
       backgroundImage:"url(./assets/HERO.png)" ,
       backgroundRepeat: 'no-repeat',
-      backgroundPosition: `0px -${TILE_SIZE - HEAD_OFFSET}px`,
+      backgroundPosition: `0px -${TILE_SIZE - 30}px`,
       animation: "hero-animation 1s steps(4) infinite",
       transform: `scaleX(${direction === EDirection.LEFT ? -1 : 1})`,
-
+      zIndex: 1,
     }}
     />
     ) ;
