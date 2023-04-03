@@ -3,6 +3,7 @@ import './App.css';
 
 import { GAME_SIZE } from './settings/constants';
 import Game from './Game';
+import Music from './Music';
 
 
 function App() {
@@ -15,7 +16,9 @@ function App() {
           height: GAME_SIZE,
         }}
         >
-  <Game/>
+            <Game/>
+    <Music/>
+
       </div>
     </div>
   );
