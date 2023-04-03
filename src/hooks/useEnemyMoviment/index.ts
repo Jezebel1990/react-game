@@ -22,6 +22,13 @@ useInterval(function move() {
         updateDirectionState(randomDirection);
         updatePositionState(moviment.nextPosition);
     }
+
+if (moviment.nextMove.dead) {
+    alert('Você morreu!');
+    window.location.reload();
+}
+
+
 } , 2000);
 
      return {
