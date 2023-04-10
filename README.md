@@ -10,7 +10,7 @@ Through the arrow keys of the keyboard, rescue the chests, and reach the exit do
 
 
 ## 📂  Access to the project
-You can access the source code of the [initial project](https://react-game-black.vercel.app/) or  [download](https://github.com/Jezebel1990/react-game.git) it.
+You can access the source code of the [project](https://react-game-black.vercel.app/) or  [download code](https://github.com/Jezebel1990/react-game.git) it.
 
 
 ## Available Scripts
